@@ -1,0 +1,36 @@
+--Create a clothing store database
+
+CREATE TABLE clothing (id INTEGER PRIMARY KEY, category TEXT, size TEXT, color TEXT, quantity INTEGER, price INTEGER);
+
+INSERT INTO clothing VALUES (1, "jeans", "small", "black", 10, 45);
+INSERT INTO clothing VALUES (2, "dresses", "small", "black", 15, 80);
+INSERT INTO clothing VALUES (3, "pants", "small", "black", 55, 100);
+INSERT INTO clothing VALUES (4, "jeans", "medium", "blue", 20, 85);
+INSERT INTO clothing VALUES (5, "skirts", "medium", "blue", 10, 70);
+INSERT INTO clothing VALUES (6, "skirts", "small", "blue", 16, 89);
+INSERT INTO clothing VALUES (7, "hoodies", "large", "red", 17, 90);
+INSERT INTO clothing VALUES (8, "skirts", "large", "red", 33, 69);
+INSERT INTO clothing VALUES (9, "jeans", "large", "red", 9, 120);
+INSERT INTO clothing VALUES (10, "dresses", "large", "white", 11, 65);
+INSERT INTO clothing VALUES (11, "hoodies", "medium", "white", 12, 110);
+INSERT INTO clothing VALUES (12, "pants", "large", "white", 18, 56);
+INSERT INTO clothing VALUES (13, "pants", "medium", "gray", 7, 75);
+INSERT INTO clothing VALUES (14, "hoodies", "small", "gray", 5, 38);
+INSERT INTO clothing VALUES (15, "dresses", "medium", "gray", 32, 18);
+
+--display the database ordered by price
+SELECT * FROM clothing
+ORDER BY price;
+
+--what is the total quantity of clothing category?
+SELECT category, SUM(quantity) FROM clothing
+GROUP BY category;
+
+--what inventory is below a quanity of 20? 
+SELECT category, color, size, quantity FROM clothing 
+WHERE quantity<=20;
+
+--display the medium sized quantities?
+SELECT category, size, quantity FROM clothing 
+WHERE size ="medium"
+ORDER BY quantity asc;
