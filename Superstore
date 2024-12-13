@@ -45,9 +45,11 @@ FROM superstore
 WHERE category = 'Kitchen Supplies'
 GROUP BY item_name;
 
-/*4. How many air purifiers are in stock?*/
+/*How many set itemss are in stock?*/
 SELECT category
   , item_name
-  , stock_quantity
+  , stock_quantity 
 FROM superstore
+WHERE item_name LIKE '%set%'
+ORDER BY stock_quantity;
 ORDER BY category;
