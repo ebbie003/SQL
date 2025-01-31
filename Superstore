@@ -49,5 +49,4 @@ SELECT category
   , stock_quantity 
 FROM superstore
 WHERE item_name LIKE '%set%'
-ORDER BY stock_quantity;
-ORDER BY category;
+ORDER BY 1, 2;
